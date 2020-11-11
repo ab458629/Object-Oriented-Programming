@@ -7,4 +7,4 @@
 ## Hw2
 #### 1. Quadtree practice and design constructor and deconstructor
 ###### This problem is quite like binary tree because the idea to solve them is same
- <img src = "https://github.com/ab458629/Object-Oriented-Programming/blob/main/Hw2/HW02/HW02_Result.PNG" width = "800" alt="首頁"/>
+
