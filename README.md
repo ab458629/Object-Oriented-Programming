@@ -24,4 +24,4 @@
 #### 1. Practice lamda expression
 #### 2. Pratice std::initializer_list
 #### 3. Compare your the cost time of alog. and vector (STL) , and report it.
-<img src = "https://github.com/ab458629/Object-Oriented-Programming/blob/main/Hw5/HW05_03/result.PNG" width = "800" alt="首頁"/>
+<img src = "https://github.com/ab458629/Object-Oriented-Programming/blob/main/Hw5/HW05_03/result.PNG" width = "500" alt="首頁"/>
