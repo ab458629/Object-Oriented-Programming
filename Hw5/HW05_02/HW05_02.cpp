@@ -1,7 +1,6 @@
 /*
 HW05_02.cpp
-¯è¤Ó©ÒºÓ¤@ P46091204 ½²©Ó¿o  Copyright (C) 2020
-Lambda expression => ¬Ù¥h¥t¥~©w¸q¨ç¼Æªº³Â·Ğ
+èˆªå¤ªæ‰€ç¢©ä¸€ P46091204 è”¡æ‰¿ç©  Copyright (C) 2020
 */
 
 #include <iostream>
@@ -18,7 +17,7 @@ int main(){
 	// list of int deduced from list contents
 	cout << average_list({ 20, 30, 19, 17, 45, 38 }) << endl;
 	// forced list of double
-	auto ad = average_list<double>({ 'A', 70, 65.33 });			// ³o¸Ì 'A'·|¨Ì·ÓASCII codeÂà´«¦¨65
+	auto ad = average_list<double>({ 'A', 70, 65.33 });			// é€™è£¡ 'A'æœƒä¾ç…§ASCII codeè½‰æ›æˆ65
 	cout << ad << endl;
 
 	system("pause");
