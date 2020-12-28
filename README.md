@@ -20,3 +20,7 @@
 #### 1. Use CLI to realize a matching game
 <img src = "https://github.com/ab458629/Object-Oriented-Programming/blob/main/Hw4/HW04/Result.PNG" width = "800" alt="首頁"/>
 
+## Hw5
+#### 1. Practice lamda expression
+#### 2. Pratice std::initializer_list
+#### 3. Compare your the cost time of alog. and vector (STL) , and report it.
