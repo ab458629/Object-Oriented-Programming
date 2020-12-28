@@ -1,3 +1,7 @@
+/*
+useHW05_03.cpp
+èˆªå¤ªæ‰€ç¢©ä¸€ P46091204 è”¡æ‰¿ç©  Copyright (C) 2020
+*/
 #include <fstream>
 #include <iostream>
 #include <iomanip>
@@ -15,68 +19,68 @@ int main(){
 	using std::cout;
 	using std::endl;
 
-	std::chrono::steady_clock::time_point start, end;	// ¬ö¿ı®É¶¡ªºÅÜ¼Æ
+	std::chrono::steady_clock::time_point start, end;	// ç´€éŒ„æ™‚é–“çš„è®Šæ•¸
 
-	start = std::chrono::steady_clock::now();	// ¬ö¿ıÅªÀÉ¶}©l®É¶¡
+	start = std::chrono::steady_clock::now();	// ç´€éŒ„è®€æª”é–‹å§‹æ™‚é–“
 	unsigned int nPoint;
-	Point* point_array = LoadPoint("HW5-3-3.bin", nPoint);//ÅªÂI
-	end = std::chrono::steady_clock::now();		// ¬ö¿ıÅªÀÉµ²§ô®É¶¡
+	Point* point_array = LoadPoint("HW5-3-3.bin", nPoint);//è®€é»
+	end = std::chrono::steady_clock::now();		// ç´€éŒ„è®€æª”çµæŸæ™‚é–“
 	cout << "Time of Load Point : " << std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count() << " ms" << endl;
 	cout << "Number of point " << nPoint << endl;
 	cout << "\n\n" << endl;
 
 	/*
-	ªk¤@ : ¥ı§Q¥Î§Ö³t±Æ§Çªk°µ±Æ§Ç¡A¦A§PÂ_¬O§_­«½Æ
+	æ³•ä¸€ : å…ˆåˆ©ç”¨å¿«é€Ÿæ’åºæ³•åšæ’åºï¼Œå†åˆ¤æ–·æ˜¯å¦é‡è¤‡
 	*/
-	cout << "ªk¤@ : ¤â¼gºtºâªk´ú¸Õ(Quick sort)" << endl;
-	start = std::chrono::steady_clock::now();	// ¬ö¿ı²¾°£­«½ÆÂI¶}©l®É¶¡
+	cout << "æ³•ä¸€ : æ‰‹å¯«æ¼”ç®—æ³•æ¸¬è©¦(Quick sort)" << endl;
+	start = std::chrono::steady_clock::now();	// ç´€éŒ„ç§»é™¤é‡è¤‡é»é–‹å§‹æ™‚é–“
 
-	QuickSort(point_array, 0, nPoint - 1);		// §Q¥ÎQuick sort±Æ§Ç
+	QuickSort(point_array, 0, nPoint - 1);		// åˆ©ç”¨Quick sortæ’åº
 	int count = 0;
 	for (int i = 0; i < nPoint; i++) {
 		if ((point_array[i] == point_array[i+1]) == 0)
 			count++;
 	}
 
-	end = std::chrono::steady_clock::now();		// ¬ö¿ı²¾°£­«½ÆÂIµ²§ô®É¶¡
+	end = std::chrono::steady_clock::now();		// ç´€éŒ„ç§»é™¤é‡è¤‡é»çµæŸæ™‚é–“
 	cout << "Cost Time " << std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count() << " ms" << endl;
-	cout << "¦@¦³" << count << "­ÓÂI" << endl;
+	cout << "å…±æœ‰" << count << "å€‹é»" << endl;
 
 	cout << "\n\n" << endl;
 
 	/*
-	ªk¤G : ¥ÎSTL¤¤Vector¸Ñ
+	æ³•äºŒ : ç”¨STLä¸­Vectorè§£
 	*/
-	cout << "ªk¤G : ¥ÎSTL¤¤Vector¸Ñ" << endl;
-	start = std::chrono::steady_clock::now();	// ¬ö¿ı²¾°£­«½ÆÂI¶}©l®É¶¡
+	cout << "æ³•äºŒ : ç”¨STLä¸­Vectorè§£" << endl;
+	start = std::chrono::steady_clock::now();	// ç´€éŒ„ç§»é™¤é‡è¤‡é»é–‹å§‹æ™‚é–“
 
 	std::vector<Point> point_vector(point_array, point_array + nPoint);
 	std::sort(point_vector.begin(), point_vector.end());
 	point_vector.erase(std::unique(point_vector.begin(), point_vector.end()), point_vector.end());
 
-	end = std::chrono::steady_clock::now();		// ¬ö¿ı²¾°£­«½ÆÂIµ²§ô®É¶¡
+	end = std::chrono::steady_clock::now();		// ç´€éŒ„ç§»é™¤é‡è¤‡é»çµæŸæ™‚é–“
 
 	cout << "Cost Time " << std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count() << " ms" << endl;
-	cout << "¦@¦³" << point_vector.size() << "­ÓÂI" << endl;
+	cout << "å…±æœ‰" << point_vector.size() << "å€‹é»" << endl;
 
 	delete [] point_array;
 	system("pause");
 	return 0;
 }
 
-Point* LoadPoint(const char* filename, unsigned int& nPoint)		// ±q¤å¦rÀÉÅª¤J¦h­ÓÂI¸ê®Æ
+Point* LoadPoint(const char* filename, unsigned int& nPoint)		// å¾æ–‡å­—æª”è®€å…¥å¤šå€‹é»è³‡æ–™
 {
 	using namespace std;
 	Point* pPoint;
 
 	try {
 		if (!filename)
-			throw new exception("¤Ş¼Æ¿ù»~");
+			throw new exception("å¼•æ•¸éŒ¯èª¤");
 
 		ifstream fin;
 		fin.open(filename, ios::in | ios::binary);
 		if (!fin.good())
-			throw new exception("ÀÉ¦W©Î¸ô®|¿ù»~! µLªk¶}±ÒÀÉ®×!");
+			throw new exception("æª”åæˆ–è·¯å¾‘éŒ¯èª¤! ç„¡æ³•é–‹å•Ÿæª”æ¡ˆ!");
 
 		const unsigned int tmpLen = 80;
 		char tmpBuff[tmpLen];
@@ -84,12 +88,12 @@ Point* LoadPoint(const char* filename, unsigned int& nPoint)		// ±q¤å¦rÀÉÅª¤J¦h­
 		//read Header
 		fin.read(tmpBuff, tmpLen);
 		if (!fin.good())
-			throw new exception("®æ¦¡¤£¦X(header¿ù»~)");
+			throw new exception("æ ¼å¼ä¸åˆ(headeréŒ¯èª¤)");
 
 		//how many point ?
 		fin.read((char *)&nPoint, 4);//unsigned long, must be 4 bytes
 		if (!fin.good())
-			throw new exception("®æ¦¡¤£¦X(¤T¨¤ºô®æ¼Æ¿ù»~)");
+			throw new exception("æ ¼å¼ä¸åˆ(ä¸‰è§’ç¶²æ ¼æ•¸éŒ¯èª¤)");
 
 		//allocate array memory
 		if (nPoint == 0)
@@ -104,7 +108,7 @@ Point* LoadPoint(const char* filename, unsigned int& nPoint)		// ±q¤å¦rÀÉÅª¤J¦h­
 		{
 			fin.read(tmpBuff, 14);
 			if (!fin.good())
-				throw new exception("®æ¦¡¤£¦X");
+				throw new exception("æ ¼å¼ä¸åˆ");
 			int gc = fin.gcount();
 			if (gc < 14)
 				throw;
