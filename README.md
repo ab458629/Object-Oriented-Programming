@@ -25,3 +25,12 @@
 #### 2. Pratice std::initializer_list
 #### 3. Compare your the cost time of alog. and vector (STL) , and report it.
 <img src = "https://github.com/ab458629/Object-Oriented-Programming/blob/main/Hw5/HW05_03/result.PNG" width = "500" alt="首頁"/>
+
+## Final Project
+#### 1. Trajectory 
+###### The following picture shows that what if the slam result just using orb + solvepnp + bunddle adjustment. 
+###### If we want to improve the accuracy, we can consider LK optical flow, direct method + sliding window, etc.
+<img src = "https://github.com/ab458629/Object-Oriented-Programming/blob/main/Final%20Project/source%20code/traj.PNG" width = "500" alt="首頁"/>
+
+#### 2. Point Cloud
+<img src = "https://github.com/ab458629/Object-Oriented-Programming/blob/main/Final%20Project/source%20code/ptcloud.PNG" width = "500" alt="首頁"/>
